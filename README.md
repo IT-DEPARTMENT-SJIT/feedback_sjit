@@ -18,3 +18,10 @@ Features in this webapplication:
 # Installation
 Change the URL from localhost to your respective IPs and make the neccessary MySQL connections for deployment. 
 
+# Contact
+  - c.seetharaman1999@gmail.com
+  - vivinjoshua22@gmail.com
+  - ramananeswar98@gmail.com
+  - aahmadrashidh@gmail.com
+  
+
