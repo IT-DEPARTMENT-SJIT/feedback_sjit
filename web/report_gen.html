@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<title>Students Feedback Form</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/report_gen.css">
+<!--===============================================================================================-->
+
+<style media="screen">
+    a{
+        padding: 11px 80px ;
+        text-decoration: none;
+        color: white;
+        background-color:red;
+        border-radius:30px
+    }
+a:hover
+{
+    /*color:yellow;*/
+    opacity: 0.7;
+    color:#ffffff;
+
+}
+
+</style>
+<script src="js/jquery.min.js"></script>
+<script>
+    function sltdept1() {
+var dept=$("select#dept").val();
+
+
+                //var dept = $("select#dept").val();
+              //  var batch = $("select#batch").val();
+               // var $('s1') = document.getElementById("dept").value;
+               //var s2 = document.getElementById("sem").value;
+             //   var s3= document.getElementById("sec").value;
+             //   document.write("hai")
+//alert("hai");
+//alert(dept);
+
+ callAjaxFunctionlab(dept);
+
+            }
+
+            /* function called to do Ajax Request */
+            function callAjaxFunctionlab(dept) {
+            //    alert(dept+sem+sec);
+
+                var url="http://localhost:8080/final_Updated/staff_report.jsp?dept="+dept;
+             //   alert(url);
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      response= this.responseText;
+     // alert(response);
+      updatepagelab(response);
+    }
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send();
+            }
+            function updatepagelab(response) {
+               // alert(response);
+             //  $('select#selectdummy').hide();
+              // $('input#staff').hide();
+
+
+              // $('div#subcode').innerHTML=response;
+                document.getElementById("subcode").innerHTML = response;
+               // $('subcode').show();
+            }
+
+
+   function sltdept11() {
+var depart=$("select#depart").val();
+
+
+                //var dept = $("select#dept").val();
+              //  var batch = $("select#batch").val();
+               // var $('s1') = document.getElementById("dept").value;
+               //var s2 = document.getElementById("sem").value;
+             //   var s3= document.getElementById("sec").value;
+             //   document.write("hai")
+//alert("hai");
+//alert(depart);
+
+ callAjaxFunctionlab1111(depart);
+
+            }
+
+            /* function called to do Ajax Request */
+            function callAjaxFunctionlab1111(depart) {
+            //    alert(dept+sem+sec);
+
+                var url="http://localhost:8080/final_Updated/staff_report.jsp?dept="+depart;
+             //   alert(url);
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      response= this.responseText;
+     // alert(response);
+      updatepagelab1111(response);
+    }
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send();
+            }
+            function updatepagelab1111(response) {
+               // alert(response);
+             //  $('select#selectdummy').hide();
+             //  $('input#staff').hide();
+             $('div#dept_select').hide();
+
+              // $('div#subcode').innerHTML=response;
+                document.getElementById("subcode1111").innerHTML = response;
+               // $('subcode').show();
+            }
+
+
+
+
+
+  function dept1() {
+var dept=$("select#dept").val();
+var staff=$("select#sub").val();
+
+ //alert(dept+staff);
+                //var dept = $("select#dept").val();
+              //  var batch = $("select#batch").val();
+               // var $('s1') = document.getElementById("dept").value;
+               //var s2 = document.getElementById("sem").value;
+             //   var s3= document.getElementById("sec").value;
+             //   document.write("hai")
+//alert("hai");
+//alert(dept);
+
+ callAjaxFunctionlabdept_handle(dept,staff);
+
+            }
+
+            /* function called to do Ajax Request */
+            function callAjaxFunctionlabdept_handle(dept,staff) {
+            //    alert(dept+sem+sec);
+
+                var url="http://localhost:8080/final_Updated/staff_report_handling_dept.jsp?dept="+dept+"&"+"staff="+staff;
+            // alert(url);
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      response= this.responseText;
+    //  alert(response);
+      updatepagedept(response);
+    }
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send();
+            }
+            function updatepagedept(response) {
+               // alert(response);
+
+              // $('input#staff').hide();
+
+              // $('div#subcode').innerHTML=response;
+                document.getElementById("dept_select").innerHTML = response;
+               // $('subcode').show();
+            }
+
+ function section_check() {
+//var dept=$("select#dept").val();
+var staff=$("select#sub").val();
+var dept=$("select#hand_dept").val();
+
+ //alert(dept+staff);
+                //var dept = $("select#dept").val();
+              //  var batch = $("select#batch").val();
+               // var $('s1') = document.getElementById("dept").value;
+               //var s2 = document.getElementById("sem").value;
+             //   var s3= document.getElementById("sec").value;
+             //   document.write("hai")
+//alert("hai");
+//alert(dept);
+
+ callAjaxFunctionlabdept_handle_sec(dept,staff);
+
+            }
+
+            /* function called to do Ajax Request */
+            function callAjaxFunctionlabdept_handle_sec(dept,staff) {
+            //    alert(dept+sem+sec);
+
+                var url="http://localhost:8080/final_Updated/staff_report_handling_sec.jsp?dept="+dept+"&"+"staff="+staff;
+            // alert(url);
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      response= this.responseText;
+     // alert(response);
+      updatepagedeptsec(response);
+    }
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send();
+            }
+            function updatepagedeptsec(response) {
+               // alert(response);
+               //$('select#selectdummy').hide();
+              // $('input#staff').hide();
+
+              // $('div#subcode').innerHTML=response;
+                document.getElementById("sec_select").innerHTML = response;
+               // $('subcode').show();
+            }
+
+            //
+            //
+            //
+ function sltdept2()
+{
+  var dept=$("select#hand_dept").val();
+            var sub=$("select#sub").val();
+            var hand_sub=$("select#hand_dept").val();
+         //   alert(dept+sub);
+
+
+                //var dept = $("select#dept").val();
+              //  var batch = $("select#batch").val();
+               // var $('s1') = document.getElementById("dept").value;
+               //var s2 = document.getElementById("sem").value;
+             //   var s3= document.getElementById("sec").value;
+//document.write("hai")
+//alert(dept+sem+sec);
+
+ callAjaxFunctionlab1(dept,sub,hand_sub);
+
+            }
+
+            /* function called to do Ajax Request */
+            function callAjaxFunctionlab1(dept1,sub1,hand_sub) {
+            // alert(dept1+sub1);
+             var url;
+                             url="http://localhost:8080/final_Updated/subwise_report_backup.jsp?dept="+dept1+"&"+"sub="+sub1+"&"+"hand_sub='"+hand_sub+"'";
+                     //  window.location.assign(url);
+                     $(location).attr('href',url);
+           // alert(url);
+
+
+            }
+
+    function sltdept3()
+{
+  var year=$("select#yc").val();
+  var dept2=$("select#yd").val();
+  var sec2=$("select#yss").val();
+
+         //   alert(year+dept2+sec2);
+
+
+                //var dept = $("select#dept").val();
+              //  var batch = $("select#batch").val();
+               // var $('s1') = document.getElementById("dept").value;
+               //var s2 = document.getElementById("sem").value;
+             //   var s3= document.getElementById("sec").value;
+//document.write("hai")
+//alert(dept+sem+sec);
+
+ callAjaxFunctionlab1(year,dept2,sec2);
+
+            }
+
+            /* function called to do Ajax Request */
+            function callAjaxFunctionlab1(year,dept2,sec2) {
+           //  alert(dept1+sub1);
+             var url;
+                             url="http://localhost:8080/final_Updated/class_report.jsp?year="+year+"&"+"dept="+dept2+"&"+"sec="+sec2;
+                     location.replace(url);
+
+
+
+
+            }
+
+
+
+
+
+
+            </script>
+</head>
+<body>
+
+	<div class="limiter">
+		<div class="container-login100">
+
+			<img class="img-responsive "src="images/image.png" alt="IMG">
+			<div class="wrap-login100">
+			<span class="login100-form-title">
+						Staff Report
+					</span>
+
+
+				<!-- 	<div class="wrap-input100 validate-input" data-validate = "Valid username is required"> -->
+
+                                <form id="f1" class="wrap-input100" action="http://localhost:8080/final_Updated/subwise_report_backup.jsp">
+
+							<div class="form-row">
+								<span><b>Subject Wise</b></span>
+							</div>
+							<div class="form-row my-4">
+
+							<div class="col-md-2 mx-auto">
+							<label>Department</label>
+							<select name="dept" id="dept" class="form-control input100" onchange="sltdept1();">
+                				<option vaule="0">--Select--</option>
+				                <option vaule="A">IT</option>
+				                <option vaule="A">CSE</option>
+				                <option vaule="A">EEE</option>
+				                <option vaule="A">ECE</option>
+				                <option vaule="A">MECH</option>
+				                <option vaule="A">CIVIL</option>
+                                                <option vaule="A">Mathematics</option>
+                                                <option vaule="A">Physics</option>
+                                                <option vaule="A">Chemistry</option>
+                                                <option vaule="A">English</option>
+		           		 	</select>
+		           		 	</div>
+		           		 		<div id="subcode" class="col-md-3 mx-auto">
+                                                        <!--    <label>Staff Name</label>
+							<select id="selectdummy" class="form-control input100">
+				                        <option vaule="0">--Select--</option>
+				                </select>-->
+	           		 </div>
+                                                            <div id="dept_select" class="col-md-3 mx-auto"></div>
+
+	           		 	<div class="col-md-3 ml-2">
+	           		 		<label>     </label>
+		           		 	<button class="btn btn-danger" onclick="sltdept2();">
+                                                        Generate Report
+							</button>
+                                                  		 	</div>
+	           		 </div>
+                                </form>
+
+<!--////////////////////////////////Individual Report ///////////////////////////////////////////////-->
+
+ <form id="f2" class="wrap-input100" action="http://localhost:8080/final_Updated/ind_staff_report.jsp">
+
+							<div class="form-row">
+								<span><b>Staff Wise</b></span>
+							</div>
+							<div class="form-row my-4">
+
+							<div class="col-md-2 mx-auto">
+							<label>Department</label>
+							<select name="dept" id="depart" class="form-control input100" onchange="sltdept11();">
+                				<option vaule="0">--Select--</option>
+				                <option vaule="A">IT</option>
+				                <option vaule="A">CSE</option>
+				                <option vaule="A">EEE</option>
+				                <option vaule="A">ECE</option>
+				                <option vaule="A">MECH</option>
+				                <option vaule="A">CIVIL</option>
+                                                <option vaule="A">Mathematics</option>
+                                                <option vaule="A">Physics</option>
+                                                <option vaule="A">Chemistry</option>
+                                                <option vaule="A">English</option>
+		           		 	</select>
+		           		 	</div>
+		           		 		<div id="subcode1111" class="col-md-3 mx-auto">
+                                                        <!--    <label>Staff Name</label>
+							<select id="selectdummy" class="form-control input100">
+				                        <option vaule="0">--Select--</option>
+				                </select>-->
+	           		 </div>
+                                                            <div id="dept_select" class="col-md-2 mx-auto"></div>
+                                                             <div id="sec_select" class="col-md-1 mx-auto"></div>
+	           		 	<div class="col-md-3 ml-2">
+	           		 		<label>     </label>
+		           		 	<button class="btn btn-danger" onclick="sltdept2();">
+                                                        Generate Report
+							</button>
+                                                  		 	</div>
+	           		 </div>
+                                </form>
+
+
+
+<!--//////////////////////////////////////end of individual//////////////////////////////////-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <form id="f2" class="wrap-input100" action="http://localhost:8080/final_Updated/class_report.jsp">
+
+	           		 <div class="form-row">
+	           		 		<span><b>Class Wise</b></span><br>
+	           		 	</div>
+
+	           		 <div class="form-row align-items-center my-4">
+							<div class="col-md-2 mx-auto">
+							<label>Year</label>
+							<select  name="yc1" id="yc" class="form-control input100">
+                				<option vaule="0">Select Year</option>
+					                <option vaule="I">I</option>
+					                <option vaule="II">II</option>
+					                <option vaule="III">III</option>
+					                <option vaule="IV">IV</option>
+					               </select>
+		           		 	</div>
+                                     <div class="col-md-2 mx-auto">
+							<label>Semester</label>
+							<select  name="sem" id="sem" class="form-control input100">
+                				<option vaule="0">Select Semester</option>
+					                <option vaule="I">I</option>
+					                <option vaule="III">III</option>
+					                <option vaule="V">V</option>
+					                <option vaule="VII">VII</option>
+					               </select>
+		           		 	</div>
+		           		 		<div class="col-md-3 mx-auto">
+		           		 	<label>Department</label>
+							<select id="yd" name="dp1" class="form-control input100">
+				                <option vaule="0">Select Department</option>
+				                <option vaule="A">CSE</option>
+					                <option vaule="IT">IT</option>
+					                <option vaule="ECE">ECE</option>
+					                <option vaule="EEE">EEE</option>
+					                <option vaule="MECH">MECH</option>
+					                <option vaule="CIVIL">CIVIL</option>
+
+	           		 	</select>
+	           		 </div>
+	           		 	<div class="col-md-2 mx-auto">
+		           		 	<label>Section</label>
+							<select id="yss" name="s1" class="form-control input100">
+				                <option vaule="0">Select Section</option>
+				                <option vaule="A">A</option>
+				                <option vaule="B">B</option>
+				                <option vaule="C">C</option>
+				                <option vaule="D">D</option>
+           		 			</select>
+	           		 	</div>
+	           		 	<div class="col-md-3 ml-auto">
+<!--                                            <form action="http://localhost:8080/final_Updated/class_report.jsp">
+                                                <input type="submit" value="Generate Report">
+                                            </form>-->
+                                            <label>     </label>
+		           		 	<button class="btn btn-danger" onclick="sltdept2();">
+                                                        Generate Report
+							</button>
+
+	           		 	</div>
+	           		 </div>
+</form>
+ <form id="f3" class="wrap-input100" action="http://localhost:8080/final_Updated/dept_report.jsp">
+                                <div class="form-row">
+	           		 		<span><b>Department Wise</b></span><br>
+	           		 	</div>
+	           		 <div class="form-row align-items-center my-4">
+	           		 	<div class="col-md-6 mx-auto">
+	           		 		<label>Department</label>
+							<select  name="dd1" class="form-control input100">
+				                	<option vaule="0">Select Department</option>
+				                	<option vaule="A">CSE</option>
+					                <option vaule="A">IT</option>
+					                <option vaule="A">ECE</option>
+					                <option vaule="A">EEE</option>
+					                <option vaule="A">MECH</option>
+					                <option vaule="A">CIVIL</option>
+                                                         <option vaule="A">Mathematics</option>
+                                                         <option vaule="A">Physics</option>
+                                                        <option vaule="A">Chemistry</option>
+                                                        <option vaule="A">English</option>
+	           		 	</select>
+	           		 	</div>
+	           		 	<div class="col-md-3 ml-4">
+<!--	           		 		<label>       </label>
+	           		 		<form action="http://localhost:8080/final_Updated/dept_report.jsp">
+                                                <input type="submit" value="Generate Report">
+                                            </form>-->
+                                                <label>     </label>
+		           		 	<button class="btn btn-danger">
+                                                        Generate Report
+							</button>
+	           		 	</div>
+	           		 </div>
+					</form>
+
+
+
+
+
+
+
+				<!-- 	<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<input class="input100" type="password" name="pass" placeholder="Password">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+					 -->
+
+					<!--<div class="text-center p-t-12">
+						<span class="txt1">
+							Forgot
+						</span>
+						<a class="txt2" href="#">
+							Username / Password?
+						</a>
+					</div>-->
+
+					<!--<div class="text-center p-t-136">
+						<a class="txt2" href="#">
+							Create your Account
+							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+						</a>
+					</div>-->
+			</div>
+		</div>
+            <center>
+<div style="background-color:#000000; padding:11px;" >
+                                                <a href="thankadmin.html">
+                                                        Logout</a>
+
+            </div>
+</center>
+
+	</div>
+
+
+    <script> <%   session.invalidate(); %>
+           console.log("triggered");
+                location.href="thankadmin.html";</script>
+
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+</html>
